@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:quickbeeapp/widget/button.dart';
 import 'package:quickbeeapp/widget/stackIcon.dart';
 
-import 'loginpage.dart';
+import 'loginScreen.dart';
 
 class MyHomePage extends StatelessWidget {
   const MyHomePage({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class MyHomePage extends StatelessWidget {
                             padding: const EdgeInsets.only(top: 10.0),
                             child: GestureDetector(
                               onTap: (){
-                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Loginpage()));
+                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LoginScreen()));
                               },
                               child: Container(
                                 height: 60.0,
