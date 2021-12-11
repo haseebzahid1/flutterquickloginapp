@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:quickbeeapp/widget/cardImage.dart';
 import 'package:quickbeeapp/widget/gridContainer.dart';
 
 class Loginpage extends StatefulWidget {
@@ -92,7 +93,7 @@ class _LoginpageState extends State<Loginpage> {
                             ],
                           ),
                         ),
-                      ), 
+                      ),
                     ),
                      Expanded(
                         child:  Container(
@@ -129,106 +130,48 @@ class _LoginpageState extends State<Loginpage> {
                         )),
                   ],
                 ),
-                 const SizedBox(
-                  height: 15.0,
+                 const SizedBox(height: 15.0,),
+
+                Row(
+                  children: const <Widget>[
+                    Expanded(
+                        child:  Text("Popular Trending",
+                            style:  TextStyle(fontSize: 18.0))),
+                    Expanded(
+                        child:  Text(
+                          "View All",
+                          style:  TextStyle(color: Color(0XFF2BD093)),
+                          textAlign: TextAlign.end,
+                        ))
+                  ],
                 ),
-               Container(
-                 child: Column(
-                   children: [
-                     Row(
-                       children: const <Widget>[
-                         Expanded(
-                             child:  Text("Popular Trending",
-                                 style:  TextStyle(fontSize: 18.0))),
-                         Expanded(
-                             child:  Text(
-                               "View All",
-                               style:  TextStyle(color: Color(0XFF2BD093)),
-                               textAlign: TextAlign.end,
-                             ))
-                       ],
-                     ),
-                     const SizedBox(
-                       height: 10.0,
-                     ),
-                     Row(
-                       children: [
-                         Expanded(
-                           child: Container(
-                             height: 150,
-                             child: Column(
-                               children: [
-                                 Container(
-                                     width: double.infinity,
-                                     height: 100,
-                                     child: Image(image: NetworkImage('https://www.howtogeek.com/wp-content/uploads/2016/01/steam-and-xbox-controllers.jpg'),fit: BoxFit.cover,)
-                                 ),
-                                 Text(
-                                   "Play Station",
-                                   style: new TextStyle(fontSize: 16.0),
-                                   textAlign: TextAlign.center,
-                                 )
-                               ],
-                             ),
-                             // decoration: BoxDecoration(
-                             //   borderRadius: BorderRadius.circular(5.0),
-                             // ),
-                           ),
-                         ),
-                         SizedBox(
-                           width: 5.0,
-                         ),
-                         Expanded(
-                           child: Container(
-                             height: 150,
-                             child: Column(
-                               children: [
-                                 Container(
-                                     width: double.infinity,
-                                     height: 100,
-                                     child: Image(image: NetworkImage('https://pawanjewellers.in/wp-content/uploads/2016/09/Jewellery-new.jpg'),fit: BoxFit.cover,)
-                                 ),
-                                 Text(
-                                   "Electronics",
-                                   style: new TextStyle(fontSize: 16.0),
-                                   textAlign: TextAlign.center,
-                                 )
-                               ],
-                             ),
-                             // decoration: BoxDecoration(
-                             //   borderRadius: BorderRadius.circular(5.0),
-                             // ),
-                           ),
-                         ),
-                         SizedBox(
-                           width: 5.0,
-                         ),
-                         Expanded(
-                           child: Container(
-                             height: 150,
-                             child: Column(
-                               children: [
-                                 Container(
-                                     width: double.infinity,
-                                     height: 100,
-                                     child: Image(image: NetworkImage('https://www.howtogeek.com/wp-content/uploads/2016/01/steam-and-xbox-controllers.jpg'),fit: BoxFit.cover,)
-                                 ),
-                                 Text(
-                                   "Jewellery and Watches",
-                                   style: new TextStyle(fontSize: 16.0),
-                                   textAlign: TextAlign.center,
-                                 )
-                               ],
-                             ),
-                             // decoration: BoxDecoration(
-                             //   borderRadius: BorderRadius.circular(5.0),
-                             // ),
-                           ),
-                         ),
-                       ],
-                     ),
-                   ],
-                 ),
+                const SizedBox(height: 10.0,),
+               Row(
+                 children: [
+                   const CardImage(cardImagePath: 'assets/images/electric.jpg', cardTitle: 'Electronic',),
+                   const SizedBox(width: 5.0,),
+                   const CardImage(cardImagePath: 'assets/images/jewlery.jpg', cardTitle: 'Jewlery and Watch',),
+                   const SizedBox(width: 5.0,),
+                   const CardImage(cardImagePath: 'assets/images/electronic.jpg', cardTitle: 'Electronic',),
+                 ],
+               ),
+               Row(
+                 children: [
+                   const CardImage(cardImagePath: 'assets/images/motor.jpg', cardTitle: 'Motors',),
+                   const SizedBox(width: 5.0,),
+                   const CardImage(cardImagePath: 'assets/images/job.jpg', cardTitle: 'Jobs',),
+                   const SizedBox(width: 5.0,),
+                   const CardImage(cardImagePath: 'assets/images/property.jpg', cardTitle: 'Property',),
+                 ],
+               ),
+               Row(
+                 children: [
+                   const CardImage(cardImagePath: 'assets/images/jewlery.jpg', cardTitle: 'Jewlery and Watch',),
+                   const SizedBox(width: 5.0,),
+                   const CardImage(cardImagePath: 'assets/images/electric.jpg', cardTitle: 'Electronic',),
+                   const SizedBox(width: 5.0,),
+                   const CardImage(cardImagePath: 'assets/images/job.jpg', cardTitle: 'Jobs',),
+                 ],
                )
 
               ],

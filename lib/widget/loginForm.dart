@@ -20,6 +20,7 @@ class _LoginFormState extends State<LoginForm> {
         children: [
           Form(
             key: _formKey,
+              autovalidateMode:AutovalidateMode.always,
               child: Column(
                 children: [
                   TextFormField(
