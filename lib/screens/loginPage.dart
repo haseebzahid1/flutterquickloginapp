@@ -2,12 +2,49 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quickbeeapp/widget/gridContainer.dart';
 
-class Loginpage extends StatelessWidget {
+class Loginpage extends StatefulWidget {
   const Loginpage({Key? key}) : super(key: key);
 
   @override
+  State<Loginpage> createState() => _LoginpageState();
+}
+
+class _LoginpageState extends State<Loginpage> {
+  int _bottomNavIndex=0;
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar:  BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        fixedColor: Color(0XFF29D091),
+        currentIndex: _bottomNavIndex,
+        onTap: (int index){
+          setState((){
+            _bottomNavIndex = index;
+
+          });
+        },
+
+        items: const [
+           BottomNavigationBarItem(
+              title:  Text(''),
+              icon:  Icon(Icons.home)
+          ),
+           BottomNavigationBarItem(
+              title:  Text(''),
+              icon:  Icon(Icons.local_offer)
+          ),
+           BottomNavigationBarItem(
+              title:  Text(''),
+              icon:  Icon(Icons.message)
+          ),
+           BottomNavigationBarItem(
+              title:  Text(''),
+              icon:  Icon(Icons.notifications)
+          )
+
+        ],
+      ),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0.0,
@@ -55,7 +92,7 @@ class Loginpage extends StatelessWidget {
                             ],
                           ),
                         ),
-                      ),
+                      ), 
                     ),
                      Expanded(
                         child:  Container(
@@ -95,22 +132,105 @@ class Loginpage extends StatelessWidget {
                  const SizedBox(
                   height: 15.0,
                 ),
-                Row(
-                  children: const <Widget>[
-                     Expanded(
-                        child:  Text("Popular Trending",
-                            style:  TextStyle(fontSize: 18.0))),
-                     Expanded(
-                        child:  Text(
-                          "View All",
-                          style:  TextStyle(color: Color(0XFF2BD093)),
-                          textAlign: TextAlign.end,
-                        ))
-                  ],
-                ),
-                 const SizedBox(
-                  height: 10.0,
-                ),
+               Container(
+                 child: Column(
+                   children: [
+                     Row(
+                       children: const <Widget>[
+                         Expanded(
+                             child:  Text("Popular Trending",
+                                 style:  TextStyle(fontSize: 18.0))),
+                         Expanded(
+                             child:  Text(
+                               "View All",
+                               style:  TextStyle(color: Color(0XFF2BD093)),
+                               textAlign: TextAlign.end,
+                             ))
+                       ],
+                     ),
+                     const SizedBox(
+                       height: 10.0,
+                     ),
+                     Row(
+                       children: [
+                         Expanded(
+                           child: Container(
+                             height: 150,
+                             child: Column(
+                               children: [
+                                 Container(
+                                     width: double.infinity,
+                                     height: 100,
+                                     child: Image(image: NetworkImage('https://www.howtogeek.com/wp-content/uploads/2016/01/steam-and-xbox-controllers.jpg'),fit: BoxFit.cover,)
+                                 ),
+                                 Text(
+                                   "Play Station",
+                                   style: new TextStyle(fontSize: 16.0),
+                                   textAlign: TextAlign.center,
+                                 )
+                               ],
+                             ),
+                             // decoration: BoxDecoration(
+                             //   borderRadius: BorderRadius.circular(5.0),
+                             // ),
+                           ),
+                         ),
+                         SizedBox(
+                           width: 5.0,
+                         ),
+                         Expanded(
+                           child: Container(
+                             height: 150,
+                             child: Column(
+                               children: [
+                                 Container(
+                                     width: double.infinity,
+                                     height: 100,
+                                     child: Image(image: NetworkImage('https://pawanjewellers.in/wp-content/uploads/2016/09/Jewellery-new.jpg'),fit: BoxFit.cover,)
+                                 ),
+                                 Text(
+                                   "Electronics",
+                                   style: new TextStyle(fontSize: 16.0),
+                                   textAlign: TextAlign.center,
+                                 )
+                               ],
+                             ),
+                             // decoration: BoxDecoration(
+                             //   borderRadius: BorderRadius.circular(5.0),
+                             // ),
+                           ),
+                         ),
+                         SizedBox(
+                           width: 5.0,
+                         ),
+                         Expanded(
+                           child: Container(
+                             height: 150,
+                             child: Column(
+                               children: [
+                                 Container(
+                                     width: double.infinity,
+                                     height: 100,
+                                     child: Image(image: NetworkImage('https://www.howtogeek.com/wp-content/uploads/2016/01/steam-and-xbox-controllers.jpg'),fit: BoxFit.cover,)
+                                 ),
+                                 Text(
+                                   "Jewellery and Watches",
+                                   style: new TextStyle(fontSize: 16.0),
+                                   textAlign: TextAlign.center,
+                                 )
+                               ],
+                             ),
+                             // decoration: BoxDecoration(
+                             //   borderRadius: BorderRadius.circular(5.0),
+                             // ),
+                           ),
+                         ),
+                       ],
+                     ),
+                   ],
+                 ),
+               )
+
               ],
             ),
           ),
